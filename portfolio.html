@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Alan's Portfolio</title>
+    <!--styles-->
+    <style>
+     /*color palette*/
+@body-default: #f1f1f1;
+@primary-color: #4aaaa5;
+@border-color: #ccc;
+/*fonts*/
+@primary-font: Georgia, 'Times New Roman', Times, serif;
+
+/*global*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 34px;
+    color: #777;
+    /*image provided by subtle patterns*/
+    background-image: url('../images/dust_scratches/dust_scratches.png');
+    background-color: @body-default;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*general*/
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    clear: both;
+}
+
+h1, h2, h3, p {
+    margin-bottom: 20px;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+h1, h2, h3 {
+    font-family: @primary-font;
+    font-weight: 700;
+    color: @primary-color;
+}
+
+h1 {
+    padding-bottom: 20px;
+    font-size: 30px;
+    line-height: 49px;
+    border-bottom: 3px solid #ddd;
+}
+
+h2, h3 {
+    font-size: 22px;
+}
+
+/*header*/
+.masthead {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    margin: 0 0 30px;
+    overflow: auto;
+    color: #fff;
+    background-color: #fff;
+    border-bottom: 2px solid @border-color;
+}
+
+#logo {
+    float: left;
+    width: 250px;
+    height: 90px;
+    font-family: @primary-font;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 90px;
+    color: #fff;
+    text-align: center;
+    background: @primary-color;
+}
+
+nav {
+    float: right;
+    margin-top: 25px;
+}
+
+nav a {
+    display: inline-block;
+    padding-left: 15px;
+    margin-left: 15px;
+    line-height: 18px;
+    color: #999;
+    text-decoration: none;
+    border-left: 1px solid #efefef;
+}
+
+nav a:first-child {
+    border-left: 0 none;
+}
+
+/*footer*/
+footer {
+    padding: 30px 0;
+    clear: both;
+    font-size: 12px;
+    color: #ccc;
+    text-align: center;
+    background: #666;
+    border-top: 8px solid @primary-color;
+    width: 100%;
+}
+
+/*sidebar*/
+.sidebar {
+    float: right;
+    width: 100%;
+    max-width: 298px;
+    padding: 30px;
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+h3, .sidebar h2 {
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    line-height: 22px;
+    border-bottom: 2px solid #eee;
+}
+
+.social {
+    width: 62px;
+    height: 62px;
+    margin: 8px 5px 0 0;
+}
+
+.social:last-child {
+    margin-right: 0;
+}
+
+.fa-github-square {
+    color: #24292e;
+}
+
+.fa-linkedin {
+    color: #0079b0;
+}
+
+.fa-stack-overflow {
+    color: #f87e3a;
+}
+
+/*main*/
+
+#main-container {
+    padding-top: 130px;
+}
+
+.main-section {
+    float: left;
+    width: 100%;
+    max-width: 650px;
+    padding: 30px;
+    margin: 0 0 40px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.pic {
+    float: left;
+    margin-right: 11px;
+}
+
+/*portfolio*/
+.work {
+    position: relative;
+    float: left;
+    width: 274px;
+    height: 167px;
+    margin: 20px 0 25px;
+}
+
+.work:nth-child(even) {
+    margin-right: 40px;
+}
+
+.work img {
+   margin-right: 40px;
+   border-radius: 15px;
+}
+
+.work h3 {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 0;
+    font-weight: 300;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    background: @primary-color;
+    border-bottom: 0;
+}
+
+.auth-image {
+    float: left;
+    width: 200px;
+    height: auto;
+    margin: 10px 25px 0 0;
+}
+
+/*contact*/
+#contact-form ul {
+    margin-bottom: 20px;
+}
+
+#contact-form li {
+    margin-bottom: 10px;
+}
+
+label, input[type=text], input[type=email],textarea {
+    display: block;
+    width: 100%;
+}
+
+input[type=text], input[type=email], textarea {
+    height: 35px;
+    padding: 0 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+}
+
+textarea {
+    height: 200px;
+}
+
+input[type=submit] {
+    padding: 10px 30px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    background: @primary-color;
+    border: 0 none;
+}
+
+select {
+    width: 100%;
+    height: 35px;
+    font-size: 14px;
+}
+
+/*media queries*/
+@media (max-width: 768px) {
+
+    .main-section {
+        margin-left: 7%;
+    }
+
+    .sidebar {
+        max-width: 300px;
+        margin-right: 31%;
+    }    
+
+}
+
+@media (max-width: 414px) {
+
+    .main-section {
+        margin-top: 5%;
+        margin-left: 0;
+    }
+
+    #logo {
+        width: 100%;
+    }
+
+    nav {
+        float: none;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .sidebar {
+        margin-right: 13%;
+    }
+
+}
+
+@media (max-width: 360px) {
+
+    .sidebar {
+        margin-right: 8%;
+    }
+
+}
+    </style>
+</head>
+
+<body>
+    <header class="masthead">
+        <div class="container">
+            <a href="index.html" id="logo">Alan Fountain</a>
+            <nav>
+                <a href="index.html">About</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div id="main-container" class="container">
+        <section class="main-section">
+            <h1>Portfolio</h1>
+
+            <div class="work">
+                <img src="/Users/alanfountain/Desktop/updatedportfolio/Updated-Portfolio/assets/images/trainschedule1.jpeg" alt="Train Schedule"  height="167px" width="274px">
+                <h3><a href="https://github.com/dafuentes20/trainschedule">Train Schedule</a></h3>
+            </div>
+
+            <div class="work">
+                <img src="/Users/alanfountain/Desktop/updatedportfolio/Updated-Portfolio/assets/images/crystal1.jpeg" alt="Crystal Collector" height="167px" width="274px">
+                <h3><a href="https://github.com/dafuentes20/unit-4-game1">Crystal Collector</a></h3>
+            </div>
+
+            <div class="work">
+                <img src="/Users/alanfountain/Desktop/updatedportfolio/Updated-Portfolio/assets/images/spotify.jpeg" alt="liri-node-app" height="167px" width="274px">
+                <h3><a href="#">Liri Node App</a></h3>
+            </div>
+
+            <div class="work">
+                <img src="/Users/alanfountain/Desktop/updatedportfolio/Updated-Portfolio/assets/images/hangman1.jpeg" alt="Hangman" height="167px" width="274px">
+                <h3><a href="https://github.com/dafuentes20/hangman">Hangman</a></h3>
+            </div>
+
+            <div class="work">
+                <img src="/Users/alanfountain/Desktop/updatedportfolio/Updated-Portfolio/assets/images/logo1.png" alt="Dutch Treat Group Project" height="167px" width="274px">
+                <h3><a href="https://github.com/ShutUpJon/groupProject1">Dutch Treat Group Project</a></h3>
+            </div>
+            <div class="work">
+                <img src="/Users/alanfountain/Desktop/updatedportfolio/Updated-Portfolio/assets/images/halloweenpic.jpeg" alt="Halloween Gif" height="167px" width="274px">
+                <h3> <a href="https://github.com/ShutUpJon/groupProject1">Halloween Gif</a></h3>
+            </div>
+           
+            </div>
+        </section>
+        </main>
+
+        <section class="sidebar">
+            <div>
+                <h2>Connect with Me</h2>
+                <a href="https://github.com/dafuentes20">
+                    <i class="fab fa-github-square fa-5x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/alan-fountain-96296b107/">
+                    <i class="fab fa-linkedin fa-5x"></i>
+                </a>
+                <a href="https://stackoverflow.com/users/10189466/dafuentes20">
+                    <i class="fab fa-stack-overflow fa-5x"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">&copy;2018 Alan Fountain</footer>
+    <!--scripts-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</body>
+
+</html>
